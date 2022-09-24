@@ -1,0 +1,62 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListarMascotasModel
+@{
+}
+<main class="contenedor sombra">
+    <div class="titulo">
+        <img class="titulo__imagen" src="@Url.Content("~/img/huella.svg")" alt="Huella">
+        <h2>Listado de Mascotas</h2>
+        <img class="titulo__imagen" src="@Url.Content("~/img/huella.svg")" alt="Huella">
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Especie</th>
+                <th>Raza</th>
+            </tr>
+        </thead>
+
+        @foreach (var mascota in Model.listaMascotas)
+        {
+            <tr>
+                <td>@mascota.Nombre</td>
+                <td>@mascota.Color</td>
+                <td>@mascota.Especie</td>
+                <td>@mascota.Raza</td>
+                <td>
+                    <div>
+                        <a class="table__boton table__boton-detalle" title="Detalles" asp-page="./DetallesMascota" asp-route-mascotaId= "@mascota.Id"></a>
+                        
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <a class="table__boton table__boton-update" title="Actualizar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <a class="table__boton table__boton-asignar" title="Asignar" asp-page="./AsignarMascota" asp-route-mascotaId= "@mascota.Id"></a>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <a class="table__boton table__boton-historia" title="Historia" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
+                    </div>
+
+                </td>
+                <td>
+                    <div>
+                        <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
+                    </div>
+
+                </td>
+                <br>
+            </tr>
+        }
+    </table>
+</main>
