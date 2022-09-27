@@ -22,27 +22,29 @@
         @foreach (var veterinario in Model.listaVeterinarios)
         {
             <tr>
-                <td>@veterinario.Nombres</td>
-                <td>@veterinario.Apellidos</td>
-                <td>@veterinario.Direccion</td>
-                <td>@veterinario.Telefono</td>
-                <td>@veterinario.TarjetaProfesional</td>
-                <td>
+                <td data-table="Nombres: ">@veterinario.Nombres</td>
+                <td data-table="Apellidos: ">@veterinario.Apellidos</td>
+                <td data-table="Dirección: ">@veterinario.Direccion</td>
+                <td data-table="Teléfono: ">@veterinario.Telefono</td>
+                <td data-table="Tarjeta Profesional: ">@veterinario.TarjetaProfesional</td>
+
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-detalle" title="Detalles" asp-page="./DetallesVeterinario" asp-route-veterinarioId= "@veterinario.Id"></a>
                         
                     </div>
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-update" title="Editar" asp-page="./AgregarVeterinario" asp-route-veterinarioId= "@veterinario.Id"></a>
                     </div>
 
                 </td>
-                <div>
-                        <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@veterinario.Id"></a>
-                    </div>
-
+               <td class="td-button">
+                 <div>
+                    <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarVeterinario" asp-route-mascotaId= "@veterinario.Id"></a>
+                 </div>
+               </td>
                 <br>
             </tr>
         }

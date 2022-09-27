@@ -21,35 +21,35 @@
         @foreach (var mascota in Model.listaMascotas)
         {
             <tr>
-                <td>@mascota.Nombre</td>
-                <td>@mascota.Color</td>
-                <td>@mascota.Especie</td>
-                <td>@mascota.Raza</td>
-                <td>
+                <td data-table="Nombre: ">@mascota.Nombre</td>
+                <td data-table="Color: ">@mascota.Color</td>
+                <td data-table="Especie: ">@mascota.Especie</td>
+                <td data-table="Raza: ">@mascota.Raza</td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-detalle" title="Detalles" asp-page="./DetallesMascota" asp-route-mascotaId= "@mascota.Id"></a>
                         
                     </div>
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-update" title="Actualizar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
                     </div>
 
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-asignar" title="Asignar" asp-page="./AsignarMascota" asp-route-mascotaId= "@mascota.Id"></a>
                     </div>
 
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-historia" title="Historia" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
                     </div>
 
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@mascota.Id"></a>
                     </div>

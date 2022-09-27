@@ -22,27 +22,28 @@
         @foreach (var dueno in Model.ListarDuenos)
         {
             <tr>
-                <td>@dueno.Nombres</td>
-                <td>@dueno.Apellidos</td>
-                <td>@dueno.Direccion</td>
-                <td>@dueno.Telefono</td>
-                <td>@dueno.Correo</td>
-                <td>
+                <td data-table="Nombre: ">@dueno.Nombres</td>
+                <td data-table="Apellidos: ">@dueno.Apellidos</td>
+                <td data-table="Dirección: ">@dueno.Direccion</td>
+                <td data-table="Teléfono: ">@dueno.Telefono</td>
+                <td data-table="Correo: ">@dueno.Correo</td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-detalle" title="Detalles" asp-page="./DetallesDuenos" asp-route-duenoId= "@dueno.Id"></a>
                         
                     </div>
                 </td>
-                <td>
+                <td class="td-button">
                     <div>
                         <a class="table__boton table__boton-update" title="Editar" asp-page="./AgregarDueno" asp-route-duenoId= "@dueno.Id"></a>
                     </div>
 
                  </td>
+                 <td class="td-button">
                  <div>
-                        <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarMascotas" asp-route-mascotaId= "@dueno.Id"></a>
+                        <a class="table__boton table__boton-borrar" title="Borrar" asp-page="./AgregarDueno" asp-route-mascotaId= "@dueno.Id"></a>
                     </div>
-
+                </td>
                 <br>
             </tr>
         }

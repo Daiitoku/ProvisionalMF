@@ -95,7 +95,7 @@ p {
 
 }
 
-@media(min-width: 480px) {
+@media(min-width: 600px) {
     .navegacion {
         border-radius: 1rem;
         margin-bottom: 2rem;
@@ -112,7 +112,7 @@ p {
     margin: 0 auto;
 }
 
-@media(min-width: 480px) {
+@media(min-width: 600px) {
     .label__navegacion {
         display: none;
     }
@@ -185,7 +185,7 @@ nav>ul {
 
 }
 
-@media(min-width: 480px) {
+@media(min-width: 600px) {
     nav>ul {
         flex-direction: row;
         justify-content: space-between;
@@ -228,7 +228,7 @@ nav>ul>li>a:hover {
 
 }
 
-@media(min-width: 480px) {
+@media(min-width: 600px) {
     nav>ul>li>a:hover {
         transform: scale(1.1);
         background: var(--azul-oscuro);
@@ -368,7 +368,7 @@ main {
     font-weight: bold;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 600px) {
 
     .campo {
         flex-direction: row;
@@ -439,6 +439,7 @@ main {
 
 /* Tabla */
 .table {
+    width: 100%;
     margin: 0 auto;
     font-size: 1.8rem;
     text-align: left;
@@ -495,6 +496,57 @@ tr:hover td {
 }
 .table__boton-borrar{
     background-image: url(../img/delete.svg);
+}
+
+@media screen and (max-width: 1060px) {
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        margin-bottom: 8px;
+        /* border-bottom: 4px solid #000;
+        border-left: 2px solid #E8E7E8;
+        border-right: 2px solid #E8E7E8;
+        border-top: 4px solid #000; */
+        border: 2px solid #000;
+        display: block;
+    }
+    .table th, .table td {
+        font-size: 12px;
+    }
+    .table td {
+        display: block;
+        border-bottom: 1px solid var(--negro);
+        text-align: right;
+    }
+    .table td:last-child {
+        border-bottom: 0px;
+    }
+    .table td::before{
+        content: attr(data-table);
+        font-weight: bold;
+        text-transform: uppercase;
+        color: var(--azul-oscuro);
+        float: left;
+    }
+    .table .td-button {
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-left: 4px;
+        padding: 14px;
+        border-bottom: 0px;
+    }
+    .table .td-button:last-child {
+        display: inline-block;
+        margin-right: 0px;
+    }
+    tr:hover td::before {
+        color: var(--blanco);
+    }
+    tr:hover .td-button {
+        background-color: inherit;
+    }
+    
 }
 
 /* Detalle */
