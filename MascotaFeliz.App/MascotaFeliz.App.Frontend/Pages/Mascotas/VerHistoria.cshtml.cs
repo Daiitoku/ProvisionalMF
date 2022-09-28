@@ -13,6 +13,7 @@ namespace MascotaFeliz.App.Frontend.Pages
     {
         private readonly IRepositorioMascota _repositorioMascota;
         private readonly IRepositorioHistoria _repositorioHistoria;
+        [BindProperty]
         public Mascota Mascota {get;set;}
         public List<VisitaPyP> ListaVisitaspyp {get;set;}
         public Historia Historia {get;set;}
@@ -22,12 +23,13 @@ namespace MascotaFeliz.App.Frontend.Pages
             this._repositorioMascota=new RepositorioMascota(new Persistencia.AppContext());
             this._repositorioHistoria=new RepositorioHistoria(new Persistencia.AppContext());
         }
-        public IActionResult OnGet(int IdMascota)
+        public IActionResult OnGet(int mascotaId)
         {
             ListaVisitaspyp=new List<VisitaPyP>();
            
 
-            Mascota=_repositorioMascota.GetMascota(IdMascota);
+            Mascota=_repositorioMascota.GetMascota(mascotaId);
+            
             Historia=_repositorioHistoria.GetHistoria(Mascota.Historia.Id);
             
             foreach (var x in Historia.VisitasPyP)
