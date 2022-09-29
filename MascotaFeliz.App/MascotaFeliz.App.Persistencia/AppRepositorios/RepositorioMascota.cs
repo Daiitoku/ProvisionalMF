@@ -37,7 +37,51 @@ namespace MascotaFeliz.App.Persistencia
             _appContext.SaveChanges();
         }
 
-       
+        public IEnumerable<Mascota> GetMascotaPorVeterinario (int idVeterinario)
+        {
+            var mascotas = GetAllMascotas();
+            List<Mascota> listMascotas = new List<Mascota>();
+            if (mascotas != null)
+            {
+                if (idVeterinario > 0)
+                {          
+                    foreach (var item in mascotas)
+                    {
+                        if (item.Veterinario != null && item.Veterinario.Id == idVeterinario)
+                       { 
+                         listMascotas.Add(item);
+                        } 
+                         
+                    }
+                    
+                 }
+            
+            }
+        return listMascotas;
+        }
+
+        public IEnumerable<Mascota> GetMascotaPorDueno (int idDueno)
+        {
+            var mascotas = GetAllMascotas();
+            List<Mascota> listMascotas = new List<Mascota>();
+            if (mascotas != null)
+            {
+                if (idDueno > 0)
+                {          
+                    foreach (var item in mascotas)
+                    {
+                        if (item.Dueno != null && item.Dueno.Id == idDueno)
+                       { 
+                         listMascotas.Add(item);
+                        } 
+                         
+                    }
+                    
+                 }
+            
+            }
+        return listMascotas;
+        }
 
         public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
         {
