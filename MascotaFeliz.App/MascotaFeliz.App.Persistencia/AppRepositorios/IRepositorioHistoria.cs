@@ -10,8 +10,8 @@ namespace MascotaFeliz.App.Persistencia
         IEnumerable<Historia> GetAllHistoria ();
         Historia GetHistoria (int idhistoria);
         Historia UpdateHistoria (Historia historia);
-
-        Historia AgregarVisitaPyP (Historia historia, VisitaPyP visitapyp);
+        Historia AsignarVisita (Historia historia, VisitaPyP visitaPyP);
+        
         
         
     }

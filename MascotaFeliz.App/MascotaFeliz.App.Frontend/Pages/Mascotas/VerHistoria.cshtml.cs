@@ -32,9 +32,9 @@ namespace MascotaFeliz.App.Frontend.Pages
             
             Historia=_repositorioHistoria.GetHistoria(Mascota.Historia.Id);
             
-            foreach (var x in Historia.VisitasPyP)
+            foreach (var h in Historia.VisitasPyP)
             {
-                ListaVisitaspyp.Add(x);
+                ListaVisitaspyp.Add(h);
             }
 
             return Page();

@@ -1,67 +1,43 @@
 @page
 @model MascotaFeliz.App.Frontend.Pages.VerHistoriaModel
 @{
-    ViewData["Title"] = "Home page";
-    Layout=null;
-    
+
 }
-  
-
-
-    <header>
-        <div class="Encabezado_superior">
-            
-            <div class="titulo">
+<main class="contenedor sombra">
+    <div class="titulo">
         <img class="titulo__imagen" src="@Url.Content("~/img/huella.svg")" alt="Huella">
         <h2>Historia de Mascota</h2>
         <img class="titulo__imagen" src="@Url.Content("~/img/huella.svg")" alt="Huella">
-        </div>
-
-
-        </div>
-      
-    </header>
-
-    <h1 id="listadodemascotas">-@Model.Mascota.Id- @Model.Mascota.Nombre          Fecha Inicio @Model.Mascota.Historia.FechaInicial</h1>
-
- 
-    <div class="cajat">
-        <table class="tabla">
-
+    </div>
+    <h2> @Model.Mascota.Nombre Fecha Inicio @Model.Mascota.Historia.FechaInicial</h2>
+    <table class="table">
+        <thead>
             <tr>
-          
-              <th>Fecha</th>
-          
-              <th>Veterinario</th>
-          
-              <th>Temperatura</th>
-
-              <th>Peso (kg)</th>
-
-              <th>Frecuencia Respiratoria</th>
-
-            
-              <th>Frecuencia Cardiaca</th>
-              <th>Estado de Animo</th>
-              <th>Recomendaciones </th>
-              
+                <th>Fecha</th>
+                <th>Veterinario</th>
+                <th>Temperatura</th>
+                <th>Peso (kg)</th>
+                <th>Frecuencia Respiratoria</th>
+                <th>Frecuencia Cardiaca</th>
+                <th>Estado de Animo</th>
+                <th>Recom </th>
             </tr>
+        </thead>
+        @foreach (var x in Model.ListaVisitaspyp)
+        {
+            <tr>
+                <td data-table="Fecha:">@x.FechaVisita</td>
+                <td data-table="Veterinario:">@x.IdVeterinario</td>
+                <td data-table="Temp:">@x.Temperatura</td>
+                <td data-table="Peso:">@x.Peso</td>
+                <td data-table="F. Res:">@x.FrecuenciaRespiratoria</td>
+                <td data-table="F. Car:">@x.FrecuenciaCardiaca</td>
+                <td data-table="E: Animo:">@x.EstadoAnimo</td>
+                <td data-table="Recom:">@x.Recomendaciones</td>
+            </tr>
+        }
+        
+    </table>
+</main>
 
-            @foreach (var x in Model.ListaVisitaspyp)
-            {
-                <tr>
-                    <td>@x.FechaVisita</td>
-                    <td>@x.IdVeterinario</td>
-                    <td>@x.Temperatura</td>
-                    <td>@x.Peso</td>
-                    <td>@x.FrecuenciaRespiratoria</td>
-                    <td>@x.FrecuenciaCardiaca</td>
-                    <td>@x.EstadoAnimo</td>
-                    <td>@x.Recomendaciones</td>
 
-                </tr>
-
-                
-
-                
-            }

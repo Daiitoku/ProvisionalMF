@@ -645,3 +645,4 @@ C:\Users\PC\Documents\RepoProvicional\ProvisionalMF\mascotafeliz.app\mascotafeli
 C:\Users\PC\Documents\RepoProvicional\ProvisionalMF\mascotafeliz.app\mascotafeliz.app.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\EliminarDueno.cshtml.g.cs
 C:\Users\PC\Documents\RepoProvicional\ProvisionalMF\mascotafeliz.app\mascotafeliz.app.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Mascotas\EliminarMascota.cshtml.g.cs
 C:\Users\PC\Documents\RepoProvicional\ProvisionalMF\mascotafeliz.app\mascotafeliz.app.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EliminarVeterinario.cshtml.g.cs
+C:\Users\PC\Documents\RepoProvicional\ProvisionalMF\mascotafeliz.app\mascotafeliz.app.frontend\obj\Debug\netcoreapp3.1\Razor\Pages\VisitasPyP\EditarVisitasPyP.cshtml.g.cs
